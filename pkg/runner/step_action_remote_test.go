@@ -167,7 +167,6 @@ func TestStepActionRemote(t *testing.T) {
 				cm.On("UpdateFromEnv", "/var/run/act/workflow/envs.txt", &sar.env).Return(func(ctx context.Context) error { return nil })
 				cm.On("UpdateFromPath", &sar.env).Return(func(ctx context.Context) error { return nil })
 			}
-
 			if tt.mocks.read {
 				sarm.On("readAction", sar.Step, suffixMatcher("act/remote-action@v1"), "", mock.Anything, mock.Anything).Return(&model.Action{}, nil)
 			}
