@@ -73,7 +73,7 @@ jobs:
         with:
           go-version: ${{ env.GO_VERSION }}
           check-latest: true
-      - run: go test -v -run ^TestRunEventHostEnvironment$ ./...
+      - run: go test -v -run ^(TestRunEventHostEnvironment|TestStepRun|TestStepDockerMain|TestStepActionRemotePost|TestStepActionRemote|TestStepActionLocalPost|TestStepActionLocalTest)$ ./...
     # TODO merge coverage with test-linux
 
   snapshot:
