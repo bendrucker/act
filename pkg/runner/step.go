@@ -98,8 +98,8 @@ func runStepExecutor(step step, stage stepStage, executor common.Executor) commo
 
 		// Prepare and clean Runner File Commands
 		actPath := rc.JobContainer.GetActPath()
-		outputFileCommand := path.Join("workflows", "outputcmd.txt")
-		stateFileCommand := path.Join("workflows", "statecmd.txt")
+		outputFileCommand := path.Join("workflow", "outputcmd.txt")
+		stateFileCommand := path.Join("workflow", "statecmd.txt")
 		(*step.getEnv())["GITHUB_OUTPUT"] = path.Join(actPath, outputFileCommand)
 		(*step.getEnv())["GITHUB_STATE"] = path.Join(actPath, stateFileCommand)
 		_ = rc.JobContainer.Copy(actPath, &container.FileEntry{
